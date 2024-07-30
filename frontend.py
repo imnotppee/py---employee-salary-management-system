@@ -1,13 +1,30 @@
+from tkinter import *
 import customtkinter
+from PIL import Image, ImageTk
 
-def button_callback():
-    print("button pressed")
+customtkinter.set_appearance_mode("light")
+customtkinter.set_default_color_theme("blue")
 
-app = customtkinter.CTk()
-app.title("my app")
-app.geometry("400x150")
+root = customtkinter.CTk()
 
-button = customtkinter.CTkButton(app, text="my button", command=button_callback)
-button.grid(row=0, column=0, padx=20, pady=20)
+root.title('Salary Management System')
+root.iconbitmap('C:\PPPPP\project2024\icon.png')
+root.geometry("800x800+700+60")
 
-app.mainloop()
+# Open Image
+my_logo = Image.open("icon.png")
+
+# Resize Image
+resized_logo = my_logo.resize((150, 150),Image.ANTIALIAS)
+
+new_logopic = ImageTk.PhotoImage(resized_logo)
+
+# Image size 512x512
+LabelLogo = Label(root, image=new_logopic)
+text = Label(root, text="")
+LabelLogo.pack()
+
+LabelLogo.grid(row=10, column=10)
+text.grid(row=1, column=1)
+
+root.mainloop()
