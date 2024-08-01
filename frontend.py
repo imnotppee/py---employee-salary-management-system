@@ -7,9 +7,9 @@ customtkinter.set_default_color_theme("blue")
 
 root = customtkinter.CTk()
 
-root.title('Salary Management System')
-root.iconbitmap('C:\PPPPP\project2024\icon.png')
-root.geometry("800x800+700+60")
+root.title('Salary Management System') # Title program
+root.iconbitmap('C:\PPPPP\project2024\icon.png') # icon porgram 
+root.geometry("1000x800+500+50")    # size of windowed
 
 # Open Image
 my_logo = Image.open("icon.png")
@@ -21,10 +21,10 @@ new_logopic = ImageTk.PhotoImage(resized_logo)
 
 # Image size 512x512
 LabelLogo = Label(root, image=new_logopic)
-text = Label(root, text="")
+blanktext = Label(root, text="")
 LabelLogo.pack()
 
 LabelLogo.grid(row=10, column=10)
-text.grid(row=1, column=1)
+blanktext.grid(row=1, column=1)
 
 root.mainloop()
